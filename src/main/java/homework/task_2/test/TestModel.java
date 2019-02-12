@@ -6,9 +6,6 @@ import homework.task_2.game.Model;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TestModel {
 
     private Model model;
@@ -33,21 +30,17 @@ public class TestModel {
         int upperBound = 100;
         model.setBounds(lowerBound, upperBound);
 
-        List<Integer> list = new ArrayList<>();
         int randomNumber;
         for (int i = 0; i < 10000; i++) {
             model.generateRandomNumber();
             randomNumber = model.getGeneratedNumber();
-            if (!(randomNumber > model.getLowerBound() &&
-                    randomNumber < model.getUpperBound())) {
+            if (!(randomNumber > lowerBound &&
+                    randomNumber < upperBound)) {
                 fail();
             }
-            list.add(randomNumber);
+            assertNotEquals(randomNumber, 0);
+            assertNotEquals(randomNumber, 100);
         }
-        assertTrue(list.contains(1));
-        assertTrue(list.contains(99));
-        assertFalse(list.contains(0));
-        assertFalse(list.contains(100));
     }
 
     @Test
