@@ -1,15 +1,15 @@
 package homework.task_2.test;
 
 import homework.task_2.game.View;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestView {
 
     private static View view;
 
-    @BeforeClass
-    public static void initializeView() {
+    @Before
+    public void initializeView() {
         view = new View();
     }
 
@@ -17,7 +17,5 @@ public class TestView {
     public void testPrint() {
         String messageToTestPrint = "This should be printed to console";
         view.print(messageToTestPrint);
-
     }
-
 }

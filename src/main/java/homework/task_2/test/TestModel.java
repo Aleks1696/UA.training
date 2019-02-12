@@ -3,7 +3,7 @@ package homework.task_2.test;
 import static org.junit.Assert.*;
 
 import homework.task_2.game.Model;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,51 +11,58 @@ import java.util.List;
 
 public class TestModel {
 
-    private static Model model;
+    private Model model;
 
-    @BeforeClass
-    public static void initializeModel() {
+    @Before
+    public void initializeModel() {
         model = new Model();
     }
 
     @Test
-    public void testGenerateRandomNumberRangeWithoutParam() {
+    public void testSetBounds() {
         int lowerBound = 0;
         int upperBound = 100;
-        int randomNumber = model.generateRandomNumber();
-        if (!(randomNumber >= lowerBound && randomNumber <= upperBound)) {
-            fail();
-        }
+        model.setBounds(lowerBound, upperBound);
+        assertEquals(model.getLowerBound(), lowerBound);
+        assertEquals(model.getUpperBound(), upperBound);
     }
 
     @Test
-    public void testGenerateRandomNumberRangeWithParam() {
-        int lowerBound = 10;
-        int upperBound = 80;
-        int randomNumber = model.generateRandomNumber(lowerBound, upperBound);
-        if (!(randomNumber >= lowerBound && randomNumber <= upperBound)) {
-            fail();
-        }
-    }
+    public void testGenerateRandomNumber() {
+        int lowerBound = 0;
+        int upperBound = 100;
+        model.setBounds(lowerBound, upperBound);
 
-    @Test
-    public void testWriteInputToHistory() {
-        int[] inputNumbers = {2, 56, 0, 100, -1, 34, 76, 90, -34};
-        for (int i = 0; i < inputNumbers.length; i++) {
-            model.writeInputToHistory(inputNumbers[i]);
-        }
-
-        List<Integer> inputHistoryList = model.getInputHistoryList();
-        int attemptsCount = model.getInputHistoryList().size();
-        if (inputHistoryList.size() != inputNumbers.length &&
-                inputNumbers.length != attemptsCount) {
-            fail();
-        } else {
-            for (int i = 0; i < inputHistoryList.size(); i++) {
-                assertEquals((int) inputHistoryList.get(i), inputNumbers[i]);
+        List<Integer> list = new ArrayList<>();
+        int randomNumber;
+        for (int i = 0; i < 10000; i++) {
+            model.generateRandomNumber();
+            randomNumber = model.getGeneratedNumber();
+            if (!(randomNumber > model.getLowerBound() &&
+                    randomNumber < model.getUpperBound())) {
+                fail();
             }
+            list.add(randomNumber);
         }
+        assertTrue(list.contains(1));
+        assertTrue(list.contains(99));
+        assertFalse(list.contains(0));
+        assertFalse(list.contains(100));
     }
 
+    @Test
+    public void testCheckNumber() {
+        int lowerBound = 0;
+        int upperBound = 100;
+        model.setBounds(lowerBound, upperBound);
+        model.generateRandomNumber();
+        int generatedNumber = model.getGeneratedNumber();
 
+        assertFalse(model.checkNumber(generatedNumber));
+        assertEquals((int)model.getInputHistoryList().get(0), generatedNumber);
+        assertTrue(model.checkNumber(generatedNumber - 1));
+        assertEquals((int)model.getInputHistoryList().get(1), generatedNumber - 1);
+        assertTrue(model.checkNumber(generatedNumber + 1));
+        assertEquals((int)model.getInputHistoryList().get(2), generatedNumber + 1);
+    }
 }
