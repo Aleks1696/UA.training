@@ -1,8 +1,8 @@
-package homework.block_1_task_regex.controller;
+package homework.block_1_task_regex.app.controller;
 
-import homework.block_1_task_regex.model.Model;
-import homework.block_1_task_regex.view.Messages;
-import homework.block_1_task_regex.view.View;
+import homework.block_1_task_regex.app.model.Model;
+import homework.block_1_task_regex.app.view.Messages;
+import homework.block_1_task_regex.app.view.View;
 
 import java.util.Scanner;
 

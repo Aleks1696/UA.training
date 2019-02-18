@@ -1,4 +1,4 @@
-package homework.block_1_task_regex.model.entity;
+package homework.block_1_task_regex.app.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package homework.block_1_task_regex.view;
+package homework.block_1_task_regex.app.view;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

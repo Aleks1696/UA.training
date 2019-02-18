@@ -1,7 +1,7 @@
-package homework.block_1_task_regex.model;
+package homework.block_1_task_regex.app.model;
 
-import homework.block_1_task_regex.model.entity.Note;
-import homework.block_1_task_regex.model.entity.NoteBook;
+import homework.block_1_task_regex.app.model.entity.Note;
+import homework.block_1_task_regex.app.model.entity.NoteBook;
 
 public class Model {
 
@@ -13,7 +13,6 @@ public class Model {
                            String mobilePhoneNumber, String email, String skype) {
         note = new Note(surname, name, familyName, nickName, commentary, homePhoneNumber,
                 mobilePhoneNumber, email, skype);
-        System.out.println(note);
     }
 
     public void createNoteBook() {
@@ -22,7 +21,6 @@ public class Model {
 
     public void addCurrentNoteToNoteBook() {
         noteBook.getNoteList().add(note);
-        System.out.println(noteBook);
     }
 
 

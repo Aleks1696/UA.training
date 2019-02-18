@@ -1,9 +1,9 @@
-package homework.block_1_task_regex.controller;
+package homework.block_1_task_regex.app.controller;
 
-import homework.block_1_task_regex.view.View;
+import homework.block_1_task_regex.app.view.View;
 
-import static homework.block_1_task_regex.controller.Regex.*;
-import static homework.block_1_task_regex.view.Messages.*;
+import static homework.block_1_task_regex.app.controller.Regex.*;
+import static homework.block_1_task_regex.app.view.Messages.*;
 
 public class InputController {
 
@@ -36,8 +36,8 @@ public class InputController {
         commentary = uController.inputValueWithScanner(COMMENTARY_MESSAGE, COMMENTARY_REGEX);
         homePhoneNumber = uController.inputValueWithScanner(HOME_PHONE_NUMBER_MESSAGE, HOME_PHONE_NUMBER_REGEX);
         mobilePhoneNumber = uController.inputValueWithScanner(MOBILE_PHONE_NUMBER_MESSAGE, MOBILE_PHONE_NUMBER_REGEX);
-        email = uController.inputValueWithScanner(EMAIL_NAME_MESSAGE, EMAIL_NAME_REGEX);
-        skype = uController.inputValueWithScanner(SKYPE_NAME_MESSAGE, SKYPE_NAME_REGEX);
+        email = uController.inputValueWithScanner(EMAIL_NAME_MESSAGE, EMAIL_REGEX);
+        skype = uController.inputValueWithScanner(SKYPE_NAME_MESSAGE, SKYPE_REGEX);
     }
 
     public String getSurname() {
