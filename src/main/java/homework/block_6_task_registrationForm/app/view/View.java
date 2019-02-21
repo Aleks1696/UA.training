@@ -4,7 +4,6 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class View {
-
     static String MESSAGES_BUNDLE_NAME = "messages";
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(
@@ -14,5 +13,9 @@ public class View {
 
     public void print(String message) {
         System.out.println(bundle.getString(message));
+    }
+
+    public void simplePrint(String message) {
+        System.out.println(message);
     }
 }
