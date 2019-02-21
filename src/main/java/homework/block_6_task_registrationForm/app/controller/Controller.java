@@ -1,6 +1,6 @@
 package homework.block_6_task_registrationForm.app.controller;
 
-import homework.block_6_task_registrationForm.app.exceptions.WrongInputDataException;
+import homework.block_6_task_registrationForm.app.exceptions.InputDataIsNotUniqueException;
 import homework.block_6_task_registrationForm.app.model.Model;
 import homework.block_6_task_registrationForm.app.view.Messages;
 import homework.block_6_task_registrationForm.app.view.View;
@@ -8,7 +8,6 @@ import homework.block_6_task_registrationForm.app.view.View;
 import java.util.Scanner;
 
 public class Controller {
-
     private Model model;
     private View view;
 
@@ -23,19 +22,15 @@ public class Controller {
         InputController inController = new InputController();
         while (true) {
             inController.getInput(new UtilityController(view, scanner));
-            model.createNote(inController.getSurname(), inController.getName(),
-                    inController.getFamilyName(), inController.getNickName(),
-                    inController.getCommentary(), inController.getHomePhoneNumber(),
-                    inController.getMobilePhoneNumber(), inController.getEmail(),
-                    inController.getSkype());
+            model.createNote(inController.getNickName(), inController.getEmail());
             try {
                 model.addNoteToDB();
                 break;
-            } catch (WrongInputDataException e) {
+            } catch (InputDataIsNotUniqueException e) {
                 e.printStackTrace();
-                view.print(String.format(e.getMessage(), e.getEnteredData()));
+                view.simplePrint(String.format(e.getMessage(), e.getEnteredData()));
             }
         }
-        System.out.println((model.getNote().toString()));
+        view.print((model.getNote().toString()));
     }
 }
