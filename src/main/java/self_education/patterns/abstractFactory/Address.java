@@ -1,4 +1,4 @@
-package self_education.abstractFactory;
+package self_education.patterns.abstractFactory;
 
 public abstract class Address {
     private String city;

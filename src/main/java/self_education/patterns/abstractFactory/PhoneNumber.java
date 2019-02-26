@@ -1,4 +1,4 @@
-package self_education.abstractFactory;
+package self_education.patterns.abstractFactory;
 
 public abstract class PhoneNumber {
     private String number;

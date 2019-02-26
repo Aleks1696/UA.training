@@ -1,8 +1,8 @@
-package self_education.abstractFactory;
+package self_education.patterns.abstractFactory;
 
-import self_education.abstractFactory.ua.UAFactory;
-import self_education.abstractFactory.us.USAddress;
-import self_education.abstractFactory.us.USFactory;
+import self_education.patterns.abstractFactory.ua.UAFactory;
+import self_education.patterns.abstractFactory.us.USAddress;
+import self_education.patterns.abstractFactory.us.USFactory;
 
 public class Demo {
     public static void main(String[] args) {

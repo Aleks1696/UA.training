@@ -1,6 +1,6 @@
-package self_education.abstractFactory.us;
+package self_education.patterns.abstractFactory.us;
 
-import self_education.abstractFactory.Address;
+import self_education.patterns.abstractFactory.Address;
 
 public class USAddress extends Address {
     private static final String COUNTRY = "United States";

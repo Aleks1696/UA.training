@@ -1,6 +1,6 @@
-package self_education.abstractFactory.us;
+package self_education.patterns.abstractFactory.us;
 
-import self_education.abstractFactory.PhoneNumber;
+import self_education.patterns.abstractFactory.PhoneNumber;
 
 public class USPhoneNumber extends PhoneNumber {
     public static final String COUNTRY_CODE = "01";

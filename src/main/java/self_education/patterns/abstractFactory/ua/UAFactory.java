@@ -1,8 +1,8 @@
-package self_education.abstractFactory.ua;
+package self_education.patterns.abstractFactory.ua;
 
-import self_education.abstractFactory.Address;
-import self_education.abstractFactory.Factory;
-import self_education.abstractFactory.PhoneNumber;
+import self_education.patterns.abstractFactory.Address;
+import self_education.patterns.abstractFactory.Factory;
+import self_education.patterns.abstractFactory.PhoneNumber;
 
 public class UAFactory implements Factory {
     @Override
