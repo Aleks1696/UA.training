@@ -1,6 +1,6 @@
-package homework.block_8_task_collections.task_2_myArrayList.test;
+package homework.block_8_task_collections.task_myArrayList.test;
 
-import homework.block_8_task_collections.task_2_myArrayList.MyArrayList;
+import homework.block_8_task_collections.task_myArrayList.MyArrayList;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,4 +1,6 @@
-package homework.block_8_task_collections.task_2_myArrayList;
+package homework.block_8_task_collections.task_myArrayList;
+
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +14,9 @@ public class Main {
         myList.remove(2);
         System.out.println(myList);
 
+        Iterator iterator = myList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
